@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909042142) do
+ActiveRecord::Schema.define(version: 20150909050013) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "style"
     t.integer  "quantity"
     t.decimal  "price"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "recipients", force: :cascade do |t|

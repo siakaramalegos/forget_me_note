@@ -2,13 +2,12 @@
 
 <h1>Listing Cards</h1>
 
-<table>
+<table class="table table-stripe table-hover">
   <thead>
     <tr>
       <th>Style</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= card.style %></td>
         <td><%= card.quantity %></td>
         <td><%= card.price %></td>
-        <td><%= card.description %></td>
         <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
         <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
