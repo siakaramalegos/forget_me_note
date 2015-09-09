@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @sender.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @sender.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sender.email %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @sender.dob %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @sender.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @sender.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @sender.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @sender.zip %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @sender.phone %>
+</p>
+
+<%= link_to 'Edit', edit_sender_path(@sender) %> |
+<%= link_to 'Back', senders_path %>

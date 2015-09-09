@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @card.style %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @card.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @card.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @card.description %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
