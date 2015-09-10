@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909050013) do
+ActiveRecord::Schema.define(version: 20150910161836) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "style"
@@ -25,6 +25,26 @@ ActiveRecord::Schema.define(version: 20150909050013) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "card_id"
+    t.integer  "cart_id"
+    t.integer  "quantity",     default: 1
+    t.decimal  "price"
+    t.integer  "recipient_id"
+    t.text     "message"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "line_items", ["card_id"], name: "index_line_items_on_card_id"
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["recipient_id"], name: "index_line_items_on_recipient_id"
 
   create_table "recipients", force: :cascade do |t|
     t.string   "first_name"
