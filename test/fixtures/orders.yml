@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_id: 
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  pay_type: MyString
+
+two:
+  sender_id: 
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  pay_type: MyString

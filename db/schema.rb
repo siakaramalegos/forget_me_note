@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910161836) do
+ActiveRecord::Schema.define(version: 20150910171507) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "style"
@@ -40,11 +40,26 @@ ActiveRecord::Schema.define(version: 20150910161836) do
     t.text     "message"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["card_id"], name: "index_line_items_on_card_id"
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
   add_index "line_items", ["recipient_id"], name: "index_line_items_on_recipient_id"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "pay_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["sender_id"], name: "index_orders_on_sender_id"
 
   create_table "recipients", force: :cascade do |t|
     t.string   "first_name"
