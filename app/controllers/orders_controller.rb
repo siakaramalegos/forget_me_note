@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:new, :create]
+  before_action :authenticate_user!
+
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -14,8 +18,15 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    if @cart.line_items.empty?
+      redirect_to storefront_index_url, notice: "Your cart is empty."
+      return
+    end
+
     @order = Order.new
+    @order.sender_id = current_user.sender.id
   end
+
 
   # GET /orders/1/edit
   def edit
@@ -25,6 +36,8 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.sender_id = current_user.sender.id
+
 
     respond_to do |format|
       if @order.save

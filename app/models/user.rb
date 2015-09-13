@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
+  has_one :sender
+
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
-  has_one :sender
 
   def set_default_role
     self.role ||= :user

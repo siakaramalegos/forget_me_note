@@ -2,14 +2,11 @@
 
 <h1>Listing Recipients</h1>
 
-<table>
+<table class="table table-stripe table-hover">
   <thead>
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>Email</th>
-      <th>Dob</th>
-      <th>Anniversary</th>
       <th>Address</th>
       <th>City</th>
       <th>State</th>
@@ -23,9 +20,6 @@
       <tr>
         <td><%= recipient.first_name %></td>
         <td><%= recipient.last_name %></td>
-        <td><%= recipient.email %></td>
-        <td><%= recipient.dob %></td>
-        <td><%= recipient.anniversary %></td>
         <td><%= recipient.address %></td>
         <td><%= recipient.city %></td>
         <td><%= recipient.state %></td>

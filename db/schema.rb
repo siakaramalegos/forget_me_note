@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910171507) do
+ActiveRecord::Schema.define(version: 20150911154422) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "style"
@@ -87,7 +87,10 @@ ActiveRecord::Schema.define(version: 20150910171507) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "senders", ["user_id"], name: "index_senders_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
