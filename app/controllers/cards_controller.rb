@@ -1,10 +1,12 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
+
   # GET /cards
   # GET /cards.json
   def index
     @cards = Card.all
+    card_ids = params [:card_ids]
   end
 
   # GET /cards/1
