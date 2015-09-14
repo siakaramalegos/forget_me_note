@@ -8,38 +8,15 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-          <%= image_tag card.image.url(:medium), class: "img-responsive" %>
-          <p><a href="#" data-toggle="modal" data-target="#myModal_<%= card.id %>">
-            <span class="glyphicon glyphicon-plus"></span> quick info
-          </a></p>
+          <%= link_to card_path(card.id) do %>
+            <%= image_tag card.image.url(:medium), class: "img-responsive" %>
+          <% end %>
           <p><strong><%= number_to_currency card.price %></strong></p>
           <h4><%= card.style %></h4>
         </div>
       </div>
-  </div> <!-- col-md-4 -->
-
-
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel"><%= card.style %></h4>
-            </div>
-            <div class="modal-body">
-              <p><%= number_to_currency card.price %></p>
-              <p><%= card.description %></p>
-            </div>
-            <div class="modal-footer">
-              <%= button_to 'Add to Cart', line_items_path(card_id: card), class: "btn btn-success btn-sm" %>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div> <!-- modal -->
-    <% end %>
+    </div> <!-- col-md-4 -->
+  <% end %>
 
   </div>
 </div>
