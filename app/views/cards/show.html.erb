@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+
 
 <p>
   <strong>Style:</strong>
@@ -24,5 +25,9 @@
   <%= image_tag @card.image.url(:medium) %>
 </p>
 
+<%= button_to 'Add to Cart', line_items_path(card_id: @card), class: "btn btn-success btn-sm" %>
+
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>
+
+</div>

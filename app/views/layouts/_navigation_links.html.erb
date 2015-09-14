@@ -1,16 +1,14 @@
 <%# add navigation links to this file %>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "Senders",  senders_path %></li>
-      <li><%= link_to "Recipients", recipients_path %></li>
-      <li><%= link_to 'Cards', cards_path %></li>
+<li><%= link_to "Store", storefront_index_path %></li>
+<li><%= link_to 'About', page_path('about') %></li>
 
-    </ul>
-</li>
 
+</ul>
 
 <ul class="nav navbar-nav navbar-right">
+  <li><%= link_to "Senders",  senders_path %></li>
+  <li><%= link_to "Recipients", recipients_path %></li>
+  <li><%= link_to 'Cards', cards_path %></li>
   <% if user_signed_in? %>
     <li><%= link_to 'Edit account', edit_user_registration_path %></li>
     <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
@@ -18,5 +16,3 @@
     <li><%= link_to 'Sign in', new_user_session_path %></li>
     <li><%= link_to 'Sign up', new_user_registration_path %></li>
   <% end %>
-</ul>
-

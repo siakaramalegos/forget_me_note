@@ -42,13 +42,12 @@ h6 {
 
 .intro-header .name {
     letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: 'Abril Fatface', cursive;
 }
 
 .intro-header .tagline {
     letter-spacing: 2px;
-    font-style: italic;
-    font-family: georgia;`
+    font-family: 'Average', Garamond, Georgia, serif;
 }
 
 .intro-message {
@@ -126,8 +125,8 @@ h6 {
 
 .banner {
     padding: 100px 0;
-    color: #f8f8f8;
-    background: url(banner-bg.jpg) no-repeat center center;
+    color: black;
+    background: url(banner-2.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -201,3 +200,5 @@ p.copyright {
   color: white;
   text-decoration: none;
 }
+
+
