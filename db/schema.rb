@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911154422) do
+ActiveRecord::Schema.define(version: 20150915162516) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "style"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150911154422) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "order_id"
+    t.date     "send_date"
   end
 
   add_index "line_items", ["card_id"], name: "index_line_items_on_card_id"
