@@ -10,6 +10,9 @@ gem "paperclip", "~> 4.3"
 gem 'awesome_print'
 gem 'aws-sdk', '< 2'
 gem 'omniauth-facebook'
+gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
+
 
 
 
