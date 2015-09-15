@@ -7,10 +7,15 @@
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
             <h2 class="section-heading"><%= @card.style %></h2>
-            <p class="lead">Quickly import contacts from your digital address book or email a custom link asking friends for their mailing info!</p>
+            <p class="lead"><%= @card.description %></p>
+            <p class="lead">$ <%= @card.price %></p><br>
+            <p>When would you like this card to arrive?</p>
+
+
+            <%= button_to 'Add to Cart', line_items_path(card_id: @card), class: "btn btn-success btn-sm" %>
         </div>
         <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-            <%= image_tag("ipad.png", class: "img-responsive") %>
+            <%= image_tag @card.image.url(:medium) %>
         </div>
     </div>
 </div>
@@ -18,33 +23,30 @@
 
 
 
-<p>
-  <strong>Style:</strong>
-  <%= @card.style %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @card.quantity %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @card.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @card.description %>
-</p>
-
-<p>
-  <%= image_tag @card.image.url(:medium) %>
-</p>
-
-<%= button_to 'Add to Cart', line_items_path(card_id: @card), class: "btn btn-success btn-sm" %>
-
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>
 
 </div>
+
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Forget Me Note 2015. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
