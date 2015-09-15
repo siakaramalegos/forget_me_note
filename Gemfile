@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem "paperclip", "~> 4.3"
 gem 'awesome_print'
 gem 'aws-sdk', '< 2'
+gem 'omniauth-facebook'
 
 
 
