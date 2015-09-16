@@ -8,7 +8,7 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-          <%= link_to card_path(card.id) do %>
+          <%= link_to new_line_item_path(card_id: card.id) do %>
             <%= image_tag card.image.url(:medium), class: "img-responsive" %>
           <% end %>
           <p><strong><%= number_to_currency card.price %></strong></p>

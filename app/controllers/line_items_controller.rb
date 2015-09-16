@@ -17,6 +17,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/new
   def new
     @line_item = LineItem.new
+    @card = Card.find(params[:card_id])
   end
 
   # GET /line_items/1/edit
@@ -27,9 +28,6 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
 
   def create
-
-
-    # card = Card.find(params[:card_id])
     @line_item = @cart.add_card(params[:card_id])
 
 
